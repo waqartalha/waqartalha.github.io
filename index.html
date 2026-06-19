@@ -87,11 +87,19 @@ section{padding:72px 0;border-top:1px solid var(--line)}
 .snum{font-family:'Space Mono',monospace;color:var(--accent);font-size:14px}
 .stitle{font-weight:800;font-size:clamp(13px,2vw,15px);letter-spacing:.18em;
   text-transform:uppercase;color:var(--mute)}
+.about{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start;margin-top:10px}
+.about .portrait{width:100%;border-radius:6px;border:1px solid var(--line);display:block}
+.about .bio p{color:var(--mute);font-size:16px;line-height:1.75;margin-bottom:18px;max-width:64ch}
+.about .bio p:last-child{margin-bottom:0}
+@media(max-width:780px){.about{grid-template-columns:1fr;gap:28px}.about .portrait{max-width:260px}}
 
 /* PROJECT */
 .proj{margin-bottom:30px}
 .proj+.proj{padding-top:64px;border-top:1px dashed var(--line)}
 .pnum{font-family:'Space Mono',monospace;font-size:13px;color:var(--accent2)}
+.ptag{display:inline-block;margin-left:12px;font-family:'Space Mono',monospace;font-size:10.5px;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);
+  border-radius:2px;padding:2px 8px;vertical-align:middle}
 .ptitle{font-family:'Archivo';font-weight:800;font-size:clamp(26px,4vw,42px);
   line-height:1.04;letter-spacing:-.015em;margin:6px 0 18px}
 .players{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:start}
@@ -117,10 +125,11 @@ section{padding:72px 0;border-top:1px solid var(--line)}
 /* GALLERY */
 .gal{display:grid;gap:10px}
 .gal .hero{width:100%;border-radius:4px;border:1px solid var(--line);
-  display:block;background:var(--bg2)}
+  display:block;background:var(--bg2);height:360px;object-fit:cover}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:10px;margin-top:10px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:10px;margin-top:10px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
-.grid3 img,.grid4 img,.gal2 img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:4px;
+.grid3 img,.grid4 img,.grid2 img,.gal2 img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:4px;
   border:1px solid var(--line);background:var(--bg2);display:block}
 .gal2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 img{transition:transform .35s,border-color .25s;cursor:zoom-in}
@@ -218,6 +227,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
 <nav><div class="wrap">
   <div class="brand">TALHA<span>.</span>WAQAR</div>
   <div class="links">
+    <a href="#about">/ about</a>
     <a href="#work">/ work</a>
     <a href="#skills">/ capabilities</a>
     <a href="#recognition">/ recognition</a>
@@ -231,6 +241,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
   <div class="name reveal">Talha Waqar</div>
   <h1 class="reveal">Design. Scan.<br>Prototype. <span class="o">Build.</span></h1>
   <p class="sub reveal">Mechanical design and product development engineer specializing in 3D scanning, reverse engineering, and additive manufacturing — turning physical hardware into precise digital geometry and back into working parts.</p>
+  <p class="sub reveal" style="margin-top:14px;font-size:15px;color:var(--mute)">Looking for roles in mechanical design, product development, reverse engineering, digital inspection, and prototyping.</p>
   <div class="meta reveal">
     <div class="chip">📍 Based in <b>Finland</b></div>
     <div class="chip">Product Development &amp; <b>Metrology</b></div>
@@ -242,8 +253,21 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
   </div>
 </div></header>
 
+<section id="about"><div class="wrap">
+  <div class="shead reveal"><span class="snum">01</span><span class="stitle">About</span></div>
+  <div class="about reveal">
+    <img class="portrait" src="img/portrait.jpg" alt="Portrait of Talha Waqar">
+    <div class="bio">
+      <p>I came to Finland almost by accident. A search for the best universities in additive manufacturing led me to Aalto. I came for a degree, but my internship at Vaisala showed me a way of working I wanted to be part of: calm but serious, with real respect for people and their time. That is a big reason I am here for the long term, learning Finnish, working toward permanent residency, and trying to become part of the society rather than just live in it.</p>
+      <p>By nature I like to go deep and understand things at a fundamental level before building on them, so I am comfortable working independently. But I value teams just as much. Several minds together form a bigger, shared mind that achieves far more than any one person alone.</p>
+      <p>Before my studies I spent years training engineering teams and running demonstrations for industrial clients, including non-specialists. It taught me that understanding a problem only matters if you can explain it simply to the people who depend on it. I would rather get something working and useful than chase a perfect version forever.</p>
+    </div>
+  </div>
+</div></section>
+
 <section id="work"><div class="wrap">
-  <div class="shead reveal"><span class="snum">01</span><span class="stitle">Selected Projects</span></div>
+  <div class="shead reveal"><span class="snum">02</span><span class="stitle">Selected Projects</span></div>
+  <p class="reveal" style="color:var(--mute);max-width:60ch;margin:-8px 0 36px;font-size:15px">Selected projects showing my work in mechanical design, CAD, 3D scanning, reverse engineering, inspection, and additive manufacturing.</p>
 
   <div class="proj reveal">
     <div class="pnum">PROJECT 01</div>
@@ -261,7 +285,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
 
   
   <div class="proj reveal alt">
-    <div class="pnum">PROJECT 02</div>
+    <div class="pnum">PROJECT 02<span class="ptag">Industrial R&amp;D</span></div>
     <div class="ptitle">3D Scanning &amp; Digital Metrology Feasibility Study — Vaisala R&amp;D</div>
     <div class="players">
       <div class="gallery-col"><div class="gal"><img class="hero" src="img/p2-1.jpg" alt="Scanning a component with a Creaform HandySCAN BLACK Elite handheld 3D scanner"><div class="grid3"><img src="img/p2-2.jpg" alt="3D scanning a bracket on positioning targets with the structured-light scanner"><img src="img/p2-3.jpg" alt="Component prepared with positioning targets ready for scan acquisition"><img src="img/p2-4.jpg" alt="Reverse-engineered enclosure: 3D-printed prototype beside the CNC-machined final part"><img src="img/p2-5.jpg" alt="Reverse-engineered mounting fixtures: 3D-printed iterations beside the finished black part"><img src="img/p2-6.jpg" alt="Scanned arm assembly mounted on custom 3D-printed fixtures"></div></div></div><div class="pbody">
@@ -277,7 +301,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
     <div class="pnum">PROJECT 03</div>
     <div class="ptitle">CompositionUltra — Graphene-Membrane Gas Analyser</div>
     <div class="players">
-      <div class="gallery-col"><div class="gal"><img class="hero" src="img/p3-1.jpg" alt="CompositionUltra finished prototype with machined heatsink body and etched logo"><div class="grid3"><img src="img/p3-2.jpg" alt="CAD render of the machined aluminium device body with maintenance lid removed"><img src="img/p3-3.jpg" alt="CAD section view showing the internal compression screw, chamber and gas channels"><img src="img/p3-4.jpg" alt="3D-printed sectioned device halves showing the internal layout"><img src="img/p3-5.jpg" alt="Team Megamorph with the CompositionUltra device at the Aalto Design Factory exhibition"><img src="img/p3-6.jpg" alt="CompositionUltra exhibition installation with posters and piped demo wall"><img src="img/p3-7.jpg" alt="CompositionUltra technical cutaway poster"></div></div></div><div class="pbody">
+      <div class="gallery-col"><div class="gal"><img class="hero" src="img/p3-1.jpg" alt="CompositionUltra finished prototype with machined heatsink body and etched logo"><div class="grid3"><img src="img/p3-3.jpg" alt="CAD section view showing the internal compression screw, chamber and gas channels"><img src="img/p3-4.jpg" alt="3D-printed sectioned device halves showing the internal layout"><img src="img/p3-7.jpg" alt="CompositionUltra technical cutaway poster"></div></div></div><div class="pbody">
         <p>This was a product development project at Aalto Design Factory for a graphene startup. Our team developed a concept for a gas analyser using a graphene membrane. I worked on the mechanical layout, CAD design, prototype parts, and the final physical demonstrator.</p>
         <ul class="role"><li>Helped develop the core concept, linking gas permeation through porous graphene to an optically-read measurement</li><li>Designed the aluminium device body and laid out the internals around the membrane port, valves and electronics in a 150 &times; 100 &times; 50 mm footprint</li><li>Led the 3D printing, producing sectioned models and a finished demonstrator for the final exhibition</li></ul>
         <div class="tools"><span class="tool">Solid Edge</span><span class="tool">CAD / Enclosure Design</span><span class="tool">SLA / FDM 3D Printing</span><span class="tool">Rapid Prototyping</span><span class="tool">Collaborative Product Development</span></div>
@@ -317,7 +341,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
     <div class="ptitle">Educational Cutaway Display Models — Atomic Energy Commission</div>
     <div class="players">
       <div class="gallery-col"><div class="gal"><img class="hero" src="img/p6-1.jpg" alt="Full-height cutaway display model of a reactor-type pressure vessel on its stand, internals colour-coded"><div class="grid3"><img src="img/p6-2.jpg" alt="Cutaway detail of the vertical pump model showing shaft, seals and red impeller"><img src="img/p6-3.jpg" alt="Full vertical multistage pump cutaway model with internal shaft and impeller exposed"><img src="img/p6-4.jpg" alt="Close-up of the pressure-vessel core internals and tube-sheet detail"><img src="img/p6-5.jpg" alt="Detail of the pump model interior showing gear coupling, seals and bearings"><img src="img/p6-6.jpg" alt="Pressure-vessel model crated in a custom foam-padded box for delivery"></div></div></div><div class="pbody">
-        <p>For this project, I helped create two large educational cutaway models from technical drawings: a vertical pump and a pressure vessel. I worked on CAD modelling, splitting parts for manufacturing, 3D printing, laser cutting, finishing, colour coding, and final assembly.</p>
+        <p>For this project, I helped create two large educational cutaway models from technical drawings: a vertical pump and a pressure vessel. I worked on CAD modelling, splitting parts for manufacturing, 3D printing, laser cutting, finishing, colour coding, and final assembly. Both models are now on display to teach visitors how the machines work inside.</p>
         <ul class="role"><li>Reconstructed the full internal geometry of both machines in CAD from client drawings</li><li>Split the oversized bodies into printer-sized segments with snap-clips and bonded joints, then built them across FDM printing, laser cutting and CNC machining</li><li>Hand-finished, colour-coded and assembled both floor-standing models on custom stands for museum display</li></ul>
         <div class="tools"><span class="tool">SolidWorks</span><span class="tool">FDM 3D Printing</span><span class="tool">Laser Cutting</span><span class="tool">CNC Machining</span><span class="tool">Design for Fabrication</span><span class="tool">Workshop Fabrication</span></div>
         <div class="impact"><div class="stat"><div class="n">2</div><div class="l">Full-scale cutaway models</div></div><div class="stat"><div class="n word">Pump + vessel</div><div class="l">Distinct machines built</div></div><div class="stat"><div class="n word">Museum</div><div class="l">Public education display</div></div></div>
@@ -328,7 +352,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
 </div></section>
 
 <section id="skills"><div class="wrap">
-  <div class="shead reveal"><span class="snum">02</span><span class="stitle">Capabilities</span></div>
+  <div class="shead reveal"><span class="snum">03</span><span class="stitle">Capabilities</span></div>
   <div class="skillgrid">
     <div class="scard reveal"><h4>CAD &amp; Design</h4><ul>
       <li>SolidWorks</li><li>Autodesk Fusion 360</li><li>Autodesk Inventor</li>
@@ -354,7 +378,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
 </div></section>
 
 <section id="recognition"><div class="wrap">
-  <div class="shead reveal"><span class="snum">03</span><span class="stitle">Recognition &amp; Training</span></div>
+  <div class="shead reveal"><span class="snum">04</span><span class="stitle">Recognition &amp; Training</span></div>
 
   <div class="rgroup reveal">
     <div class="rlabel">Recognition</div>
@@ -400,6 +424,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 50px;background:var(--bg2
     <div class="flinks reveal">
       <a href="mailto:talhakt1@gmail.com">→ email</a>
       <a href="https://www.linkedin.com/in/talhawaqar270198" target="_blank">→ linkedin</a>
+      <p style="color:var(--mute);font-size:14px;line-height:1.6;margin-top:20px;max-width:42ch">I tailor my CV for each application. Get in touch if you'd like a role-specific CV or more detail on any project.</p>
     </div>
   </div>
   <div class="copy" style="border-top:1px solid var(--line);padding-top:22px;margin-top:36px;line-height:1.7">Leadership &amp; Community — Organizer, National Ability Sports Festival (2019) · Volunteer, Ability Sports Festival (2017), supporting inclusion for persons with disabilities.</div>
